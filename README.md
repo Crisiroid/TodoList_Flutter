@@ -1,16 +1,18 @@
-# todolist
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="300"/>
+</div>
 
-A new Flutter project.
+<div id="badges" align="center">
+	<a href="https://www.instagram.com/trloneloa/">
+  	<img src="https://img.shields.io/badge/Instagram-red?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram Badge"/>
+	</a>
+	<a href="https://www.linkedin.com/in/amir-sajjad-hp-4371351b6/">
+	<img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+	</a>
+</div>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h3 align="center">
+  A Todo List Android Application<br/>
+  Created Using Flutter<br/>
+  Designed by Crisiroid<br/>
+</h3>
