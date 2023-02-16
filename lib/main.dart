@@ -30,55 +30,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme:
-          ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 32, 14, 41)),
+          ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 13, 6, 17)),
       home: SafeArea(
         child: Scaffold(
+          appBar: AppBar(title: Text("ToDo list"), backgroundColor: Color.fromARGB(255, 29, 18, 59),),
           body: Column(
             children: [
               SizedBox(
                 height: 10,
               ),
-
-              /*Expanded(
-                child: Center(
-                  child: ListView.builder(
-                    itemCount: _listItemCount,
-                    itemBuilder: (context, index) {
-                      return Center(
-                        child: GestureDetector(
-                          child: Container(
-                            width: MediaQuery.of(context).size.width - 20,
-                            margin: EdgeInsets.only(top: 5),
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Color.fromARGB(255, 46, 28, 63),
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                              color: Color.fromARGB(255, 66, 57, 97),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Icon(
-                                  Icons.person_pin_circle,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                  "Item Number: " + names[index],
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.more_horiz))
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),*/
 
               Expanded(
                 child: Center(
@@ -99,12 +59,38 @@ class _MyAppState extends State<MyApp> {
                           : ListView(
                               children: snapshot.data!.map((toodo) {
                                 return Center(
-                                    child: ListTile(
-                                  title: Text(
-                                    toodo.name,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ));
+                                    child: Container(
+                            width: MediaQuery.of(context).size.width - 20,
+                            margin: EdgeInsets.only(top: 5),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Color.fromARGB(255, 46, 28, 63),
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Color.fromARGB(255, 66, 57, 97),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(
+                                  Icons.insert_emoticon,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  toodo.name,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        databaseHelper.instance.remove(toodo.id!);
+                                      });
+                                    },
+                                    icon: Icon(Icons.more_horiz))
+                              ],
+                            ),
+                          ),
+                          );
                               }).toList(),
                             );
                     },
@@ -121,6 +107,7 @@ class _MyAppState extends State<MyApp> {
                         changeData();
                       }
                     },
+                    style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 29, 18, 59)),
                     child: Text("Add Item"));
               }),
             ],
